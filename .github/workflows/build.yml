@@ -11,23 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f # v2.3.4
+      uses: actions/checkout@v2.3.4
       with:
         fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
     - name: Install .NET 5 SDK
-      uses: actions/setup-dotnet@53063334342b67eb3f5066a7ac9151683aa30b96 # v1.8.1
+      uses: actions/setup-dotnet@v1.8.2
       with:
-        dotnet-version: 5.0.302
+        dotnet-version: 5.0.10
 
     - name: Build
       run: dotnet build --configuration Release --verbosity minimal
-      
-    - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # v2.2.4
+      uses: actions/upload-artifact@2.2.4
       with:
         name: NuGet packages
         path: |
