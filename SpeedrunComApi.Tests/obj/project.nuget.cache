@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ek58s5DbchGY94XSVcGAMaRD/I0LAcZDIWGRQNjU5TBXctEOXytZ0n1GAD03ZMr4gTqOQNoK37U7iktwnrrurA==",
+  "dgSpecHash": "De7xMWlzekLPr0Jz+jRKxtjPx8Teg8MtKRgjKyNTZxn13bDVwGN1i4DgdnM3YR0X3HwwxsEUK0/46K9p6aJWYg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
+  "projectFilePath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\smith\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\smith\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

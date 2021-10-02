@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Nerdbank.GitVersioning/3.4.240": {
+        "type": "package",
+        "build": {
+          "build/Nerdbank.GitVersioning.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildCrossTargeting/Nerdbank.GitVersioning.targets": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -26,6 +35,56 @@
     }
   },
   "libraries": {
+    "Nerdbank.GitVersioning/3.4.240": {
+      "sha512": "OLVIcTEKZCyUbF7+h6Lm+gU9V7wT+PPpYZ7sGtz3GfjNoB84drKxRh5qLrbLV6tqD/YWvvXZH2DAbCSQilGSGA==",
+      "type": "package",
+      "path": "nerdbank.gitversioning/3.4.240",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MSBuildCore/LibGit2Sharp.dll",
+        "build/MSBuildCore/LibGit2Sharp.dll.config",
+        "build/MSBuildCore/Microsoft.DotNet.PlatformAbstractions.dll",
+        "build/MSBuildCore/NerdBank.GitVersioning.dll",
+        "build/MSBuildCore/Nerdbank.GitVersioning.Tasks.dll",
+        "build/MSBuildCore/Newtonsoft.Json.dll",
+        "build/MSBuildCore/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/MSBuildCore/System.Text.Json.dll",
+        "build/MSBuildCore/Validation.dll",
+        "build/MSBuildFull/LibGit2Sharp.dll",
+        "build/MSBuildFull/LibGit2Sharp.dll.config",
+        "build/MSBuildFull/Microsoft.DotNet.PlatformAbstractions.dll",
+        "build/MSBuildFull/NerdBank.GitVersioning.dll",
+        "build/MSBuildFull/Nerdbank.GitVersioning.Tasks.dll",
+        "build/MSBuildFull/Newtonsoft.Json.dll",
+        "build/MSBuildFull/System.Buffers.dll",
+        "build/MSBuildFull/System.Memory.dll",
+        "build/MSBuildFull/System.Numerics.Vectors.dll",
+        "build/MSBuildFull/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/MSBuildFull/System.Text.Json.dll",
+        "build/MSBuildFull/Validation.dll",
+        "build/MSBuildFull/lib/linux-x64/libgit2-6777db8.so",
+        "build/MSBuildFull/lib/osx/libgit2-6777db8.dylib",
+        "build/MSBuildFull/lib/win32/x64/git2-6777db8.dll",
+        "build/MSBuildFull/lib/win32/x86/git2-6777db8.dll",
+        "build/Nerdbank.GitVersioning.Common.targets",
+        "build/Nerdbank.GitVersioning.Inner.targets",
+        "build/Nerdbank.GitVersioning.targets",
+        "build/runtimes/linux-arm/native/libgit2-6777db8.so",
+        "build/runtimes/linux-arm64/native/libgit2-6777db8.so",
+        "build/runtimes/linux-musl-x64/native/libgit2-6777db8.so",
+        "build/runtimes/linux-x64/native/libgit2-6777db8.so",
+        "build/runtimes/osx/native/libgit2-6777db8.dylib",
+        "build/runtimes/win-x64/native/git2-6777db8.dll",
+        "build/runtimes/win-x64/native/git2-6777db8.pdb",
+        "build/runtimes/win-x86/native/git2-6777db8.dll",
+        "build/runtimes/win-x86/native/git2-6777db8.pdb",
+        "buildCrossTargeting/Nerdbank.GitVersioning.targets",
+        "nerdbank.gitversioning.3.4.240.nupkg.sha512",
+        "nerdbank.gitversioning.nuspec",
+        "readme.txt"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -87,6 +146,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Nerdbank.GitVersioning >= 3.4.240",
       "Newtonsoft.Json >= 13.0.1",
       "NuGet.CommandLine >= 5.11.0",
       "RestSharp >= 106.12.0"
@@ -132,6 +192,12 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Nerdbank.GitVersioning": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.4.240, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"

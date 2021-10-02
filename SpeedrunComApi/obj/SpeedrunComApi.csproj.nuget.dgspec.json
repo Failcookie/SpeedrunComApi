@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {}
+    "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {
+    "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {
       "version": "0.0.1",
       "restore": {
-        "projectUniqueName": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
+        "projectUniqueName": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
         "projectName": "SpeedrunComApi",
-        "projectPath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
+        "projectPath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
         "packagesPath": "C:\\Users\\smith\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\obj\\",
+        "outputPath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\smith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,12 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Nerdbank.GitVersioning": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.4.240, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"

@@ -5674,11 +5674,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
       "projectName": "SpeedrunComApi.Tests",
-      "projectPath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
+      "projectPath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\SpeedrunComApi.Tests.csproj",
       "packagesPath": "C:\\Users\\smith\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\obj\\",
+      "outputPath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\smith\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5696,8 +5696,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {
-              "projectPath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj"
+            "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {
+              "projectPath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj"
             }
           }
         }

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Co6eLLSxHOZAVFX/w7yxP5OowWM7899jE7IYdsKj2/ypWlm4UaY7z21n3YpHDdXnpwKhUcz/AIiQ0dxk0DmVtw==",
+  "dgSpecHash": "FocxJFa17XUJ79zj6e2D7kuHjdLpoIY4IoiTBI2A75k6QYniaosFqVRWsIq1rd1ee5L1I9Cd6RTn5bnsGs3s2A==",
   "success": true,
-  "projectFilePath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
+  "projectFilePath": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\smith\\.nuget\\packages\\nerdbank.gitversioning\\3.4.240\\nerdbank.gitversioning.3.4.240.nupkg.sha512",
     "C:\\Users\\smith\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\smith\\.nuget\\packages\\nuget.commandline\\5.11.0\\nuget.commandline.5.11.0.nupkg.sha512",
     "C:\\Users\\smith\\.nuget\\packages\\restsharp\\106.12.0\\restsharp.106.12.0.nupkg.sha512"
