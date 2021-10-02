@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Co6eLLSxHOZAVFX/w7yxP5OowWM7899jE7IYdsKj2/ypWlm4UaY7z21n3YpHDdXnpwKhUcz/AIiQ0dxk0DmVtw==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\smith\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\smith\\.nuget\\packages\\nuget.commandline\\5.11.0\\nuget.commandline.5.11.0.nupkg.sha512",
+    "C:\\Users\\smith\\.nuget\\packages\\restsharp\\106.12.0\\restsharp.106.12.0.nupkg.sha512"
+  ],
+  "logs": []
+}
