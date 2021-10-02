@@ -13,6 +13,7 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Failcookie")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Copyright © 2021 Failcookie")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpeedrunComApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpeedrunComApi")]
 [assembly: System.Resources.NeutralResourcesLanguageAttribute("en-US")]

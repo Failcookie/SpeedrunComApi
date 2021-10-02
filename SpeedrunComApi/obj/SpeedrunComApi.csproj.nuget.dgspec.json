@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj": {
-      "version": "0.0.1",
+      "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
         "projectName": "SpeedrunComApi",
@@ -41,11 +41,15 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "Nerdbank.GitVersioning": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "Microsoft.Build.Artifacts": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.4.240, )"
+              "version": "[2.2.0, )"
+            },
+            "Nerdbank.GitVersioning": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.4.220, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

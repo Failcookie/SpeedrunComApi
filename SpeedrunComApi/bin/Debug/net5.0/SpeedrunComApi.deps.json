@@ -6,8 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "SpeedrunComApi/0.0.1": {
+      "SpeedrunComApi/0.0.1-beta-g49ed9dc2c0": {
         "dependencies": {
+          "Microsoft.Build.Artifacts": "2.2.0",
+          "Nerdbank.GitVersioning": "3.4.220",
           "Newtonsoft.Json": "13.0.1",
           "NuGet.CommandLine": "5.11.0",
           "RestSharp": "106.12.0"
@@ -16,6 +18,8 @@
           "SpeedrunComApi.dll": {}
         }
       },
+      "Microsoft.Build.Artifacts/2.2.0": {},
+      "Nerdbank.GitVersioning/3.4.220": {},
       "Newtonsoft.Json/13.0.1": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
@@ -36,10 +40,24 @@
     }
   },
   "libraries": {
-    "SpeedrunComApi/0.0.1": {
+    "SpeedrunComApi/0.0.1-beta-g49ed9dc2c0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.Build.Artifacts/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCjxrw7SdrFWIEdq8BUHr5UAlIvQkMvrXwbN/gdrM+YEqNCR0U+3JXdCXzzHHerE9XXYa3NOCBvGd/WIw6RliA==",
+      "path": "microsoft.build.artifacts/2.2.0",
+      "hashPath": "microsoft.build.artifacts.2.2.0.nupkg.sha512"
+    },
+    "Nerdbank.GitVersioning/3.4.220": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4A8qKgM1OLmAEnP30qlA8AhVAutKfJtQbfhwXIeUE5QhWKlnGe6cThJik9aKAzZvhcdmUIaN4O0q+JSI6BU4A==",
+      "path": "nerdbank.gitversioning/3.4.220",
+      "hashPath": "nerdbank.gitversioning.3.4.220.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",

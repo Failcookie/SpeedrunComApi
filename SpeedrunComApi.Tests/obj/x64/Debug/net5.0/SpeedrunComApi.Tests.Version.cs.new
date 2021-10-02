@@ -21,12 +21,12 @@ internal static partial class ThisAssembly {
     internal const string AssemblyConfiguration = "Debug";
     internal const string AssemblyFileVersion = "0.0.1.0";
     internal const string AssemblyInformationalVersion = "0.0.1-beta+49ed9dc2c0";
-    internal const string AssemblyName = "SpeedrunComApi";
-    internal const string AssemblyTitle = "SpeedrunComApi";
+    internal const string AssemblyName = "SpeedrunComApi.Tests";
+    internal const string AssemblyTitle = "SpeedrunComApi.Tests";
     internal const string AssemblyVersion = "0.0.0.0";
     internal static readonly System.DateTime GitCommitDate = new System.DateTime(637688093680000000L, System.DateTimeKind.Utc);
     internal const string GitCommitId = "49ed9dc2c001f7fd02c9b072b0d8f55ed9dd0812";
     internal const bool IsPrerelease = true;
     internal const bool IsPublicRelease = false;
-    internal const string RootNamespace = "SpeedrunComApi";
+    internal const string RootNamespace = "SpeedrunComApi.Tests";
 }

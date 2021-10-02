@@ -2,7 +2,18 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Nerdbank.GitVersioning/3.4.240": {
+      "Microsoft.Build.Artifacts/2.2.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Build.Artifacts.props": {},
+          "build/Microsoft.Build.Artifacts.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Build.Artifacts.props": {},
+          "buildMultiTargeting/Microsoft.Build.Artifacts.targets": {}
+        }
+      },
+      "Nerdbank.GitVersioning/3.4.220": {
         "type": "package",
         "build": {
           "build/Nerdbank.GitVersioning.targets": {}
@@ -35,10 +46,35 @@
     }
   },
   "libraries": {
-    "Nerdbank.GitVersioning/3.4.240": {
-      "sha512": "OLVIcTEKZCyUbF7+h6Lm+gU9V7wT+PPpYZ7sGtz3GfjNoB84drKxRh5qLrbLV6tqD/YWvvXZH2DAbCSQilGSGA==",
+    "Microsoft.Build.Artifacts/2.2.0": {
+      "sha512": "xCjxrw7SdrFWIEdq8BUHr5UAlIvQkMvrXwbN/gdrM+YEqNCR0U+3JXdCXzzHHerE9XXYa3NOCBvGd/WIw6RliA==",
       "type": "package",
-      "path": "nerdbank.gitversioning/3.4.240",
+      "path": "microsoft.build.artifacts/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "MSBuild-NuGet-Icon.png",
+        "Sdk/Sdk.props",
+        "Sdk/Sdk.targets",
+        "build/Microsoft.Build.Artifacts.Common.props",
+        "build/Microsoft.Build.Artifacts.Common.targets",
+        "build/Microsoft.Build.Artifacts.props",
+        "build/Microsoft.Build.Artifacts.targets",
+        "build/net46/Microsoft.Build.Artifacts.dll",
+        "build/net472/Microsoft.Build.Artifacts.dll",
+        "build/net5.0/Microsoft.Build.Artifacts.dll",
+        "build/netcoreapp3.1/Microsoft.Build.Artifacts.dll",
+        "buildMultiTargeting/Microsoft.Build.Artifacts.props",
+        "buildMultiTargeting/Microsoft.Build.Artifacts.targets",
+        "microsoft.build.artifacts.2.2.0.nupkg.sha512",
+        "microsoft.build.artifacts.nuspec"
+      ]
+    },
+    "Nerdbank.GitVersioning/3.4.220": {
+      "sha512": "a4A8qKgM1OLmAEnP30qlA8AhVAutKfJtQbfhwXIeUE5QhWKlnGe6cThJik9aKAzZvhcdmUIaN4O0q+JSI6BU4A==",
+      "type": "package",
+      "path": "nerdbank.gitversioning/3.4.220",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -80,7 +116,7 @@
         "build/runtimes/win-x86/native/git2-6777db8.dll",
         "build/runtimes/win-x86/native/git2-6777db8.pdb",
         "buildCrossTargeting/Nerdbank.GitVersioning.targets",
-        "nerdbank.gitversioning.3.4.240.nupkg.sha512",
+        "nerdbank.gitversioning.3.4.220.nupkg.sha512",
         "nerdbank.gitversioning.nuspec",
         "readme.txt"
       ]
@@ -146,7 +182,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Nerdbank.GitVersioning >= 3.4.240",
+      "Microsoft.Build.Artifacts >= 2.2.0",
+      "Nerdbank.GitVersioning >= 3.4.220",
       "Newtonsoft.Json >= 13.0.1",
       "NuGet.CommandLine >= 5.11.0",
       "RestSharp >= 106.12.0"
@@ -156,7 +193,7 @@
     "C:\\Users\\smith\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.0.1",
+    "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\smith\\source\\repos\\SpeedrunComApi\\SpeedrunComApi\\SpeedrunComApi.csproj",
       "projectName": "SpeedrunComApi",
@@ -192,11 +229,15 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "Nerdbank.GitVersioning": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "Microsoft.Build.Artifacts": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[3.4.240, )"
+            "version": "[2.2.0, )"
+          },
+          "Nerdbank.GitVersioning": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.4.220, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",

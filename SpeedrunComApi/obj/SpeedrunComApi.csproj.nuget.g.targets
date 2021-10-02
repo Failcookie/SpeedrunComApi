@@ -4,6 +4,7 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)nerdbank.gitversioning\3.4.240\build\Nerdbank.GitVersioning.targets" Condition="Exists('$(NuGetPackageRoot)nerdbank.gitversioning\3.4.240\build\Nerdbank.GitVersioning.targets')" />
+    <Import Project="$(NuGetPackageRoot)nerdbank.gitversioning\3.4.220\build\Nerdbank.GitVersioning.targets" Condition="Exists('$(NuGetPackageRoot)nerdbank.gitversioning\3.4.220\build\Nerdbank.GitVersioning.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.build.artifacts\2.2.0\build\Microsoft.Build.Artifacts.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.build.artifacts\2.2.0\build\Microsoft.Build.Artifacts.targets')" />
   </ImportGroup>
 </Project>

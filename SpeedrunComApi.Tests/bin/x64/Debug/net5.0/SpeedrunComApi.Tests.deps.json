@@ -6,9 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "SpeedrunComApi.Tests/1.0.0": {
+      "SpeedrunComApi.Tests/0.0.1-beta-g49ed9dc2c0": {
         "dependencies": {
+          "Microsoft.Build.Artifacts": "2.2.0",
           "Microsoft.NET.Test.Sdk": "16.9.4",
+          "Nerdbank.GitVersioning": "3.4.220",
           "SpeedrunComApi": "1.0.0",
           "coverlet.collector": "3.0.2",
           "xunit": "2.4.1",
@@ -19,6 +21,7 @@
         }
       },
       "coverlet.collector/3.0.2": {},
+      "Microsoft.Build.Artifacts/2.2.0": {},
       "Microsoft.CodeCoverage/16.9.4": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -289,6 +292,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "Nerdbank.GitVersioning/3.4.220": {},
       "NETStandard.Library/1.6.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1041,7 +1045,7 @@
     }
   },
   "libraries": {
-    "SpeedrunComApi.Tests/1.0.0": {
+    "SpeedrunComApi.Tests/0.0.1-beta-g49ed9dc2c0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1052,6 +1056,13 @@
       "sha512": "sha512-iBvPAIDaI7j/iMx/DzCGCJ3rdiOmel9VINEfaTiBv/NKIGHOP4X3hqc6Q1wgMtArEshlhXexQknP17SK4vXb1w==",
       "path": "coverlet.collector/3.0.2",
       "hashPath": "coverlet.collector.3.0.2.nupkg.sha512"
+    },
+    "Microsoft.Build.Artifacts/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCjxrw7SdrFWIEdq8BUHr5UAlIvQkMvrXwbN/gdrM+YEqNCR0U+3JXdCXzzHHerE9XXYa3NOCBvGd/WIw6RliA==",
+      "path": "microsoft.build.artifacts/2.2.0",
+      "hashPath": "microsoft.build.artifacts.2.2.0.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.9.4": {
       "type": "package",
@@ -1101,6 +1112,13 @@
       "sha512": "sha512-9ZQKCWxH7Ijp9BfahvL2Zyf1cJIk8XYLF6Yjzr2yi0b2cOut/HQ31qf1ThHAgCc3WiZMdnWcfJCgN82/0UunxA==",
       "path": "microsoft.win32.primitives/4.3.0",
       "hashPath": "microsoft.win32.primitives.4.3.0.nupkg.sha512"
+    },
+    "Nerdbank.GitVersioning/3.4.220": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a4A8qKgM1OLmAEnP30qlA8AhVAutKfJtQbfhwXIeUE5QhWKlnGe6cThJik9aKAzZvhcdmUIaN4O0q+JSI6BU4A==",
+      "path": "nerdbank.gitversioning/3.4.220",
+      "hashPath": "nerdbank.gitversioning.3.4.220.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",

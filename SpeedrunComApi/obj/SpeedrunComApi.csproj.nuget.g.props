@@ -15,6 +15,9 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.build.artifacts\2.2.0\build\Microsoft.Build.Artifacts.props" Condition="Exists('$(NuGetPackageRoot)microsoft.build.artifacts\2.2.0\build\Microsoft.Build.Artifacts.props')" />
+  </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgNuGet_CommandLine Condition=" '$(PkgNuGet_CommandLine)' == '' ">C:\Users\smith\.nuget\packages\nuget.commandline\5.11.0</PkgNuGet_CommandLine>
   </PropertyGroup>

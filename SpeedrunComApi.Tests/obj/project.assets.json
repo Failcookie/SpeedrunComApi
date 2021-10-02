@@ -8,6 +8,17 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "Microsoft.Build.Artifacts/2.2.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Build.Artifacts.props": {},
+          "build/Microsoft.Build.Artifacts.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Build.Artifacts.props": {},
+          "buildMultiTargeting/Microsoft.Build.Artifacts.targets": {}
+        }
+      },
       "Microsoft.CodeCoverage/16.9.4": {
         "type": "package",
         "compile": {
@@ -314,6 +325,15 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "Nerdbank.GitVersioning/3.4.220": {
+        "type": "package",
+        "build": {
+          "build/Nerdbank.GitVersioning.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildCrossTargeting/Nerdbank.GitVersioning.targets": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -1590,7 +1610,7 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "SpeedrunComApi/0.0.1": {
+      "SpeedrunComApi/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
@@ -1656,6 +1676,31 @@
         "coverlet-icon.png",
         "coverlet.collector.3.0.2.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Microsoft.Build.Artifacts/2.2.0": {
+      "sha512": "xCjxrw7SdrFWIEdq8BUHr5UAlIvQkMvrXwbN/gdrM+YEqNCR0U+3JXdCXzzHHerE9XXYa3NOCBvGd/WIw6RliA==",
+      "type": "package",
+      "path": "microsoft.build.artifacts/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "MSBuild-NuGet-Icon.png",
+        "Sdk/Sdk.props",
+        "Sdk/Sdk.targets",
+        "build/Microsoft.Build.Artifacts.Common.props",
+        "build/Microsoft.Build.Artifacts.Common.targets",
+        "build/Microsoft.Build.Artifacts.props",
+        "build/Microsoft.Build.Artifacts.targets",
+        "build/net46/Microsoft.Build.Artifacts.dll",
+        "build/net472/Microsoft.Build.Artifacts.dll",
+        "build/net5.0/Microsoft.Build.Artifacts.dll",
+        "build/netcoreapp3.1/Microsoft.Build.Artifacts.dll",
+        "buildMultiTargeting/Microsoft.Build.Artifacts.props",
+        "buildMultiTargeting/Microsoft.Build.Artifacts.targets",
+        "microsoft.build.artifacts.2.2.0.nupkg.sha512",
+        "microsoft.build.artifacts.nuspec"
       ]
     },
     "Microsoft.CodeCoverage/16.9.4": {
@@ -2234,6 +2279,56 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "Nerdbank.GitVersioning/3.4.220": {
+      "sha512": "a4A8qKgM1OLmAEnP30qlA8AhVAutKfJtQbfhwXIeUE5QhWKlnGe6cThJik9aKAzZvhcdmUIaN4O0q+JSI6BU4A==",
+      "type": "package",
+      "path": "nerdbank.gitversioning/3.4.220",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MSBuildCore/LibGit2Sharp.dll",
+        "build/MSBuildCore/LibGit2Sharp.dll.config",
+        "build/MSBuildCore/Microsoft.DotNet.PlatformAbstractions.dll",
+        "build/MSBuildCore/NerdBank.GitVersioning.dll",
+        "build/MSBuildCore/Nerdbank.GitVersioning.Tasks.dll",
+        "build/MSBuildCore/Newtonsoft.Json.dll",
+        "build/MSBuildCore/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/MSBuildCore/System.Text.Json.dll",
+        "build/MSBuildCore/Validation.dll",
+        "build/MSBuildFull/LibGit2Sharp.dll",
+        "build/MSBuildFull/LibGit2Sharp.dll.config",
+        "build/MSBuildFull/Microsoft.DotNet.PlatformAbstractions.dll",
+        "build/MSBuildFull/NerdBank.GitVersioning.dll",
+        "build/MSBuildFull/Nerdbank.GitVersioning.Tasks.dll",
+        "build/MSBuildFull/Newtonsoft.Json.dll",
+        "build/MSBuildFull/System.Buffers.dll",
+        "build/MSBuildFull/System.Memory.dll",
+        "build/MSBuildFull/System.Numerics.Vectors.dll",
+        "build/MSBuildFull/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/MSBuildFull/System.Text.Json.dll",
+        "build/MSBuildFull/Validation.dll",
+        "build/MSBuildFull/lib/linux-x64/libgit2-6777db8.so",
+        "build/MSBuildFull/lib/osx/libgit2-6777db8.dylib",
+        "build/MSBuildFull/lib/win32/x64/git2-6777db8.dll",
+        "build/MSBuildFull/lib/win32/x86/git2-6777db8.dll",
+        "build/Nerdbank.GitVersioning.Common.targets",
+        "build/Nerdbank.GitVersioning.Inner.targets",
+        "build/Nerdbank.GitVersioning.targets",
+        "build/runtimes/linux-arm/native/libgit2-6777db8.so",
+        "build/runtimes/linux-arm64/native/libgit2-6777db8.so",
+        "build/runtimes/linux-musl-x64/native/libgit2-6777db8.so",
+        "build/runtimes/linux-x64/native/libgit2-6777db8.so",
+        "build/runtimes/osx/native/libgit2-6777db8.dylib",
+        "build/runtimes/win-x64/native/git2-6777db8.dll",
+        "build/runtimes/win-x64/native/git2-6777db8.pdb",
+        "build/runtimes/win-x86/native/git2-6777db8.dll",
+        "build/runtimes/win-x86/native/git2-6777db8.pdb",
+        "buildCrossTargeting/Nerdbank.GitVersioning.targets",
+        "nerdbank.gitversioning.3.4.220.nupkg.sha512",
+        "nerdbank.gitversioning.nuspec",
+        "readme.txt"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -5653,7 +5748,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "SpeedrunComApi/0.0.1": {
+    "SpeedrunComApi/1.0.0": {
       "type": "project",
       "path": "../SpeedrunComApi/SpeedrunComApi.csproj",
       "msbuildProject": "../SpeedrunComApi/SpeedrunComApi.csproj"
@@ -5661,8 +5756,10 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Microsoft.Build.Artifacts >= 2.2.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
-      "SpeedrunComApi >= 0.0.1",
+      "Nerdbank.GitVersioning >= 3.4.220",
+      "SpeedrunComApi >= 1.0.0",
       "coverlet.collector >= 3.0.2",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
@@ -5712,9 +5809,19 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.Build.Artifacts": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.9.4, )"
+          },
+          "Nerdbank.GitVersioning": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.4.220, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
