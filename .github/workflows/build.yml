@@ -24,7 +24,7 @@ jobs:
       run: dotnet build --configuration Release --verbosity minimal
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@2.2.4
+      uses: actions/upload-artifact@v2.2.4
       with:
         name: NuGet packages
         path: |
