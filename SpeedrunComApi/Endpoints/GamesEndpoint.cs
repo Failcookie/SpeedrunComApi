@@ -19,7 +19,7 @@ namespace SpeedrunComApi.Endpoints
 		private readonly string baseUrl = "v1/games";
 
 		#region List of Games
-        public async Task<ApiResponse<List<Game>>> GetGamesAsync(GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Desc, CancellationToken token = default)
+        public async Task<ApiResponse<List<Game>>> GetGamesAsync(GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl, Method.GET);
 			addGamesListDefaultParameters(request, orderBy, sortDir);
@@ -29,7 +29,7 @@ namespace SpeedrunComApi.Endpoints
 			return response.Data;
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByNameAsync(string name, GameOrderBy orderBy = GameOrderBy.Similarity, SortDirection sortDir = SortDirection.Desc, CancellationToken token = default)
+		public async Task<ApiResponse<List<Game>>> GetGamesByNameAsync(string name, GameOrderBy orderBy = GameOrderBy.Similarity, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl, Method.GET);
 			request.AddParameter("name", name);
@@ -40,7 +40,7 @@ namespace SpeedrunComApi.Endpoints
 			return response.Data;
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByAbbreviationAsync(string abbreviation, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Desc, CancellationToken token = default)
+		public async Task<ApiResponse<List<Game>>> GetGamesByAbbreviationAsync(string abbreviation, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl, Method.GET);
 			request.AddParameter("abbreviation", abbreviation);
@@ -51,7 +51,7 @@ namespace SpeedrunComApi.Endpoints
 			return response.Data;
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByYearReleasedAsync(int year, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Desc, CancellationToken token = default)
+		public async Task<ApiResponse<List<Game>>> GetGamesByYearReleasedAsync(int year, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl, Method.GET);
 			request.AddParameter("released", year);
@@ -62,7 +62,8 @@ namespace SpeedrunComApi.Endpoints
 			return response.Data;
 		}
 
-		public async Task<ApiResponse<List<GameBulk>>> GetGamesBulkAsync(GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Desc, int max = 100, CancellationToken token = default)
+		/// <param name="max">Max amount of 1000</param>
+		public async Task<ApiResponse<List<GameBulk>>> GetGamesBulkAsync(int max = 100, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl, Method.GET);
 			request.AddParameter("_bulk", "yes");
