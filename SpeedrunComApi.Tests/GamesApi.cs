@@ -31,12 +31,12 @@ namespace SpeedrunComApi.Tests
         [InlineData(5)]
         [InlineData(10)]
         [InlineData(15)]
-        public async Task GetGamesBulkAsync_GetGamesInlineData(int max)
+        public async Task GetGamesBulkAsync_GetGamesInlineData(int pageSize)
         {
             var client = new SpeedrunComApiClient();
-            var games = await client.Games.GetGamesBulkAsync(max: max);
+            var games = await client.Games.GetGamesBulkAsync(pageSize: pageSize);
 
-            Assert.True(games.Data.Count == max);
+            Assert.True(games.Data.Count == pageSize);
         }
     }
 }
