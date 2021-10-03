@@ -3,8 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <LangVersion>latest</LangVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>.NET Core Library for interacting with the Speedrun.com API</Description>
   </PropertyGroup>
 
   <ItemGroup>
