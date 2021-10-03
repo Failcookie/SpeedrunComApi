@@ -1,6 +1,9 @@
 name: build
 
-on: push
+on:
+  create:
+    tags:
+      - v*
 
 env:
   DOTNET_NOLOGO: 1 # Disable the .NET welcome message
