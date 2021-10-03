@@ -3,11 +3,15 @@
   "version": "0.0.2",
   "publicReleaseRefSpec": [
     "^refs/heads/master$",
-    "^refs/heads/v\\d+(?:\\.\\d+)?$"
+    "^refs/heads/v\\d+(?:\\.\\d+)?$",
+    "^refs/tags/v\\d+(?:\\.\\d+){0,3}$"
   ],
   "cloudBuild": {
     "buildNumber": {
       "enabled": true
     }
+  },
+  "release": {
+    "branchName": "release/v{version}"
   }
 }
