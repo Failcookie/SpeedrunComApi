@@ -27,6 +27,24 @@ namespace SpeedrunComApi.Tests
             Assert.True(games.Data.Count == 100);
         }
 
+        [Fact]
+        public async Task GetGame_SuperMario64()
+        {
+            var client = new SpeedrunComApiClient();
+            var game = await client.Games.GetGameAsync("o1y9wo6q");
+
+            Assert.NotNull(game.Data);
+        }
+
+        [Fact]
+        public async Task GetGameCategories_SuperMario64Categories()
+        {
+            var client = new SpeedrunComApiClient();
+            var categories = await client.Games.GetGameGategoriesAsync("o1y9wo6q", false);
+
+            Assert.NotNull(categories.Data);
+        }
+
         [Theory]
         [InlineData(5)]
         [InlineData(10)]

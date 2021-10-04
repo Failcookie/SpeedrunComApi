@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using SpeedrunComApi.EnumOptions;
+using SpeedrunComApi.Models.Categories;
 using SpeedrunComApi.Models.Games;
 using SpeedrunComApi.Objects;
 using SpeedrunComApi.Utilities;
@@ -92,7 +93,7 @@ namespace SpeedrunComApi.Endpoints
 		#endregion
 
 		/// <param name="id">Game abbreviation or ID</param>
-		public async Task<ApiResponse<Game>> GetGame(string id, CancellationToken token = default)
+		public async Task<ApiResponse<Game>> GetGameAsync(string id, CancellationToken token = default)
 		{
 			var request = new RestRequest(baseUrl + $"/{id}", Method.GET);
 			var response = await _client.ExecuteAsync<ApiResponse<Game>>(request, token).ConfigureAwait(false);
@@ -101,13 +102,13 @@ namespace SpeedrunComApi.Endpoints
 		}
 
 		/// <param name="miscellaneous">If true, filter our misc categories.</param>
-		public async Task<ApiResponse<Game>> GetGameGategories(string id, bool miscellaneous = true, CancellationToken token = default)
+		public async Task<ApiResponse<List<Category>>> GetGameGategoriesAsync(string id, bool miscellaneous = false, CancellationToken token = default)
 		{
 			string parsedMisc = miscellaneous ? "yes" : "no";
 
 			var request = new RestRequest(baseUrl + $"/{id}/categories", Method.GET);
 			request.AddParameter("miscellaneous", parsedMisc);
-			var response = await _client.ExecuteAsync<ApiResponse<Game>>(request, token).ConfigureAwait(false);
+			var response = await _client.ExecuteAsync<ApiResponse<List<Category>>>(request, token).ConfigureAwait(false);
 
 			return response.Data;
 		}
