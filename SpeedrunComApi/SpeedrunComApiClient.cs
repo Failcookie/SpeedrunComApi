@@ -1,18 +1,21 @@
 ﻿using RestSharp;
 using SpeedrunComApi.Endpoints;
+using SpeedrunComApi.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SpeedrunComApi
 {
-    public class SpeedrunComApiClient
+    public class SpeedrunComApiClient : ISpeedrunComApiClient
     {
         public UsersEndpoint Users { get; }
         public CategoriesEndpoint Categories { get; }
         public GamesEndpoint Games { get; }
 
-        public SpeedrunComApiClient(int? timeout = null)
+        /// <summary>
+        /// Dependency injection constructor
+        /// </summary>
+        /// <param name="rateLimitedRequester">Rate limited requester for all endpoints.</param>
+        public SpeedrunComApiClient(IRateLimitedRequester rateLimitedRequester, int? timeout = null)
         {
             var assemblyVersion = GetType().Assembly.GetName().Version;
             var versionString = assemblyVersion == null ? "unknown" : assemblyVersion.ToString(3);
@@ -20,7 +23,7 @@ namespace SpeedrunComApi
             var client = new RestClient("https://www.speedrun.com/api/")
             {
                 UserAgent = $"SpeedrunComApi.NET/{versionString}",
-                Timeout = (int)(timeout ?? TimeSpan.FromSeconds(30).TotalMilliseconds)
+                Timeout = (int)(timeout ?? TimeSpan.FromSeconds(60).TotalMilliseconds)
             }.UseSerializer<JsonNetSerializer>();
 
             Users = new UsersEndpoint(client);

@@ -23,8 +23,10 @@ namespace SpeedrunComApi
 			return JsonConvert.SerializeObject(obj, _serializerSettings);
 		}
 
-		public string Serialize(Parameter parameter)
-		{
+#pragma warning disable CS0618 // Type or member is obsolete
+        public string Serialize(Parameter parameter)
+#pragma warning restore CS0618 // Type or member is obsolete
+        {
 			return JsonConvert.SerializeObject(parameter.Value, _serializerSettings);
 		}
 
