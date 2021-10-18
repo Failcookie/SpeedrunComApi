@@ -30,8 +30,6 @@ namespace SpeedrunComApi.Http
         /// <exception cref="ArgumentNullException">apiKey</exception>
         protected RequesterBase(string apiKey) : this()
         {
-            if (string.IsNullOrWhiteSpace(apiKey))
-                throw new ArgumentNullException(nameof(apiKey));
             ApiKey = apiKey;
         }
 
