@@ -1,25 +1,21 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using SpeedrunComApi.Interfaces;
 using SpeedrunComApi.Models.Users;
 using SpeedrunComApi.Objects;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace SpeedrunComApi.Endpoints
 {
     public class UsersEndpoint : EndpointBase
     {
-        internal UsersEndpoint(IRestClient client) : base(client) { }
+        internal UsersEndpoint(IRateLimitedRequester requester) : base(requester) { }
 
-		public async Task<ApiResponse<List<User>>> GetUsersAsync(CancellationToken token = default)
+		public async Task<ApiResponse<List<User>>> GetUsersAsync()
 		{
-			var request = new RestRequest("v1/users", Method.GET);
-			var response = await _client.ExecuteAsync<ApiResponse<List<User>>>(request, token).ConfigureAwait(false);
+			var response = await _requester.CreateGetRequestAsync("v1/users").ConfigureAwait(false);
 
-			return response.Data;
+			return JsonConvert.DeserializeObject<ApiResponse<List<User>>>(response);
 		}
 	}
 }

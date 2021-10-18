@@ -1,17 +1,14 @@
-﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SpeedrunComApi.Interfaces;
 
 namespace SpeedrunComApi.Endpoints
 {
-	public abstract class EndpointBase
+    public abstract class EndpointBase
 	{
-		internal readonly IRestClient _client;
+		internal readonly IRateLimitedRequester _requester;
 
-		internal EndpointBase(IRestClient client)
+		internal EndpointBase(IRateLimitedRequester requester)
 		{
-			_client = client;
+			_requester = requester;
 		}
 	}
 }

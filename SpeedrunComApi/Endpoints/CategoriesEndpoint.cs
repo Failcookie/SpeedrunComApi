@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using SpeedrunComApi.Interfaces;
 using SpeedrunComApi.Models.Categories;
 using SpeedrunComApi.Objects;
 using System;
@@ -10,19 +11,20 @@ namespace SpeedrunComApi.Endpoints
 {
     public class CategoriesEndpoint : EndpointBase
 	{
-		internal CategoriesEndpoint(IRestClient client) : base(client) { }
+		internal CategoriesEndpoint(IRateLimitedRequester requester) : base(requester) { }
 
-		public async Task<ApiResponse<List<Category>>> GetCategoryByIdAsync(string id, CancellationToken token = default)
+		private readonly string baseUrl = "v1/categories";
+
+		public async Task<ApiResponse<Category>> GetCategoryByIdAsync(string id)
 		{
 			if(string.IsNullOrEmpty(id))
             {
 				throw new ArgumentNullException("id");
-
 			}
-			var request = new RestRequest("v1/categories/{id}", Method.GET);
-			var response = await _client.ExecuteAsync<ApiResponse<List<Category>>>(request, token).ConfigureAwait(false);
 
-			return response.Data;
+			var response = await _requester.CreateGetRequestAsync(baseUrl + $"/{id}").ConfigureAwait(false);
+
+			return JsonConvert.DeserializeObject<ApiResponse<Category>>(response);
 		}
 	}
 }

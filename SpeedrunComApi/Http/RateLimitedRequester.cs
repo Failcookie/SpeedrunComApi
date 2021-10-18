@@ -32,28 +32,26 @@ namespace SpeedrunComApi.Http
         #region Public Methods
 
         /// <inheritdoc />
-        public Task<string> CreateGetRequestAsync(string relativeUrl, List<string> queryParameters = null,
-            bool useHttps = true)
+        public Task<string> CreateGetRequestAsync(string relativeUrl, List<string> queryParameters = null)
         {
-            var request = PrepareRequest(_host, relativeUrl, queryParameters, useHttps, HttpMethod.Get);
+            var request = PrepareRequest(_host, relativeUrl, queryParameters, HttpMethod.Get);
 
             return GetRateLimitedResponseContentAsync(request);
         }
 
         /// <inheritdoc />
-        public Task<string> CreatePostRequestAsync(string relativeUrl, string body,
-            List<string> queryParameters = null, bool useHttps = true)
+        public Task<string> CreatePostRequestAsync(string relativeUrl, string body, List<string> queryParameters = null)
         {
-            var request = PrepareRequest(_host, relativeUrl, queryParameters, useHttps, HttpMethod.Post);
+            var request = PrepareRequest(_host, relativeUrl, queryParameters, HttpMethod.Post);
             request.Content = new StringContent(body, Encoding.UTF8, "application/json");
 
             return GetRateLimitedResponseContentAsync(request);
         }
 
         /// <inheritdoc />
-        public async Task<bool> CreatePutRequestAsync(string relativeUrl, string body, List<string> queryParameters = null, bool useHttps = true)
+        public async Task<bool> CreatePutRequestAsync(string relativeUrl, string body, List<string> queryParameters = null)
         {
-            var request = PrepareRequest(_host, relativeUrl, queryParameters, useHttps, HttpMethod.Put);
+            var request = PrepareRequest(_host, relativeUrl, queryParameters, HttpMethod.Put);
             request.Content = new StringContent(body, Encoding.UTF8, "application/json");
 
             await GetRateLimiter().HandleRateLimitAsync().ConfigureAwait(false);

@@ -34,7 +34,10 @@ namespace SpeedrunComApi.Objects
 
         public SpeedrunComApiOptions()
         {
-
+            RateLimits = new Dictionary<TimeSpan, int>
+            {
+                [TimeSpan.FromMinutes(1)] = 100
+            };
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +40,11 @@ namespace SpeedrunComApi.Http
         /// </summary>
         protected RequesterBase()
         {
+            var assemblyVersion = GetType().Assembly.GetName().Version;
+            var versionString = assemblyVersion == null ? "unknown" : assemblyVersion.ToString(3);
+
             _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("SpeedrunComApi.NET", versionString));
         }
 
         #region Protected Methods
@@ -60,18 +65,16 @@ namespace SpeedrunComApi.Http
             return response;
         }
 
-        protected HttpRequestMessage PrepareRequest(string host, string relativeUrl, List<string> queryParameters,
-            bool useHttps, HttpMethod httpMethod)
+        protected HttpRequestMessage PrepareRequest(string host, string relativeUrl, List<string> queryParameters, HttpMethod httpMethod)
         {
-            var scheme = useHttps ? "https" : "http";
             var url = queryParameters == null ?
-                $"{scheme}://{host}{relativeUrl}" :
-                $"{scheme}://{host}{relativeUrl}?{BuildArgumentsString(queryParameters)}";
+                $"https://{host}{relativeUrl}" :
+                $"https://{host}{relativeUrl}?{BuildArgumentsString(queryParameters)}";
 
             var requestMessage = new HttpRequestMessage(httpMethod, url);
             if (!string.IsNullOrEmpty(ApiKey))
             {
-                requestMessage.Headers.Add("X-Riot-Token", ApiKey);
+                requestMessage.Headers.Add("X-API-Key", ApiKey);
             }
             return requestMessage;
         }

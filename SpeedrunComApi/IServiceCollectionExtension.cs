@@ -15,6 +15,24 @@ namespace SpeedrunComApi
 {
     public static class IServiceCollectionExtension
     {
+        public static IServiceCollection AddSpeedrunComApi(this IServiceCollection serviceCollection)
+        {
+            if (serviceCollection == null)
+            {
+                throw new ArgumentNullException(nameof(serviceCollection));
+            }
+
+            var apiOptions = new SpeedrunComApiOptions();
+
+            AddCache(serviceCollection, apiOptions);
+
+            var rateLimitedRequester = new RateLimitedRequester(apiOptions.ApiKey, apiOptions.RateLimits);
+
+            serviceCollection.AddSingleton<ISpeedrunComApiClient>(serviceProvider => new SpeedrunComApiClient(rateLimitedRequester));
+
+            return serviceCollection;
+        }
+
         public static IServiceCollection AddSpeedrunComApi(this IServiceCollection serviceCollection, Action<SpeedrunComApiOptions> options)
         {
             if(serviceCollection == null)
