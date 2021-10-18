@@ -19,7 +19,7 @@ namespace SpeedrunComApi.Http
         public readonly IDictionary<TimeSpan, int> RateLimits;
 
         private readonly bool _throwOnDelay;
-        private readonly string _host = "https://www.speedrun.com/api";
+        private readonly string _host = "www.speedrun.com/api/";
         private readonly ConcurrentDictionary<string, RateLimiter> _rateLimiters = new ConcurrentDictionary<string, RateLimiter>();
 
         /// <inheritdoc />

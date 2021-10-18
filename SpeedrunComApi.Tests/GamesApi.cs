@@ -14,6 +14,7 @@ namespace SpeedrunComApi.Tests
     public class GamesApi
     {
         private Mock<IRateLimitedRequester> _rateLimitedRequester;
+        private IRateLimitedRequester _realLimitedRequester;
         private const string GameListResponsePath = "./Responses/GameList_Response.txt";
         private const string GameBulkResponsePath = "./Responses/GameBulk_Response.txt";
         private const string GameSingleResponsePath = "./Responses/GameSingle_Response.txt";
@@ -22,6 +23,10 @@ namespace SpeedrunComApi.Tests
         public GamesApi()
         {
             _rateLimitedRequester = new Mock<IRateLimitedRequester>();
+            _realLimitedRequester = new RateLimitedRequester("", new Dictionary<TimeSpan, int>
+            {
+                [TimeSpan.FromMinutes(1)] = 100
+            });
         }
 
         [Fact]
@@ -68,17 +73,16 @@ namespace SpeedrunComApi.Tests
             Assert.NotNull(categories.Data);
         }
 
-        // TODO: Will need to change this to make it work with either mock data, or connect it directly to the main endpoint for verification
-        //[Theory]
-        //[InlineData(5)]
-        //[InlineData(10)]
-        //[InlineData(15)]
-        //public async Task GetGamesBulkAsync_GetGamesInlineData(int pageSize)
-        //{
-        //    var client = new SpeedrunComApiClient(_rateLimitedRequester.Object);
-        //    var games = await client.Games.GetGamesBulkAsync(pageSize: pageSize);
+        [Theory]
+        [InlineData(5)]
+        [InlineData(10)]
+        [InlineData(15)]
+        public async Task GetGamesBulkAsync_GetGamesInlineData(int pageSize)
+        {
+            var client = new SpeedrunComApiClient(_realLimitedRequester);
+            var games = await client.Games.GetGamesBulkAsync(pageSize: pageSize);
 
-        //    Assert.True(games.Data.Count == pageSize);
-        //}
+            Assert.True(games.Data.Count == pageSize);
+        }
     }
 }
