@@ -12,5 +12,6 @@ namespace SpeedrunComApi.Interfaces
         UsersEndpoint Users { get; }
         CategoriesEndpoint Categories { get; }
         GamesEndpoint Games { get; }
+        RunsEndpoint Runs { get; }
     }
 }
