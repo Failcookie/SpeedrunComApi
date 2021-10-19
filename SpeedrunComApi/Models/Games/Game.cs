@@ -2,67 +2,64 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.Games
 {
     public record Game
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string ID { get; init; }
 
-        [JsonPropertyName("names")]
+        [JsonProperty("names")]
         public GameName Names { get; init; }
 
-        [JsonPropertyName("abbreviation")]
+        [JsonProperty("abbreviation")]
         public string Abbreviation { get; init; }
 
-        [JsonPropertyName("weblink")]
+        [JsonProperty("weblink")]
         public Uri Weblink { get; init; }
 
-        [JsonPropertyName("release-date")]
+        [JsonProperty("release-date")]
         public DateTime? ReleaseDate { get; init; }
 
-        [JsonPropertyName("ruleset")]
+        [JsonProperty("ruleset")]
         public GameRuleSet RuleSet { get; init; }
 
-        [JsonPropertyName("romhack")]
+        [JsonProperty("romhack")]
         public bool Romhack { get; init; }
 
-        [JsonPropertyName("gametypes")]
+        [JsonProperty("gametypes")]
         public string[] GametypeIDs { get; init; } // TODO
 
-        [JsonPropertyName("platforms")]
+        [JsonProperty("platforms")]
         public string[] PlatformIDs { get; init; }  // TODO
 
-        [JsonPropertyName("regions")]
+        [JsonProperty("regions")]
         public string[] Regions { get; init; }  // TODO
 
-        [JsonPropertyName("genres")]
+        [JsonProperty("genres")]
         public string[] GenreIDs { get; init; }  // TODO
 
-        [JsonPropertyName("engines")]
+        [JsonProperty("engines")]
         public string[] EngineIDs { get; init; }  // TODO
 
-        [JsonPropertyName("developers")]
+        [JsonProperty("developers")]
         public string[] DeveloperIDs { get; init; }  // TODO
 
-        [JsonPropertyName("publishers")]
+        [JsonProperty("publishers")]
         public string[] PublisherIDs { get; init; }  // TODO
 
-        [JsonPropertyName("moderators")]
+        [JsonProperty("moderators")]
         public Dictionary<string, string> Moderators { get; init; }  // TODO
 
-        [JsonPropertyName("created")]
+        [JsonProperty("created")]
         public DateTimeOffset? Created { get; init; }
 
-        [JsonPropertyName("assets")]
+        [JsonProperty("assets")]
         public Assets Assets { get; init; }
 
-        [JsonPropertyName("links")]
+        [JsonProperty("links")]
         public ReadOnlyCollection<ApiLink> Links { get; init; }
     }
 }

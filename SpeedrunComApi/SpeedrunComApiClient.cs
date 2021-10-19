@@ -8,6 +8,7 @@ namespace SpeedrunComApi
         public UsersEndpoint Users { get; }
         public CategoriesEndpoint Categories { get; }
         public GamesEndpoint Games { get; }
+        public RunsEndpoint Runs { get; }
 
         /// <summary>
         /// Dependency injection constructor
@@ -18,6 +19,7 @@ namespace SpeedrunComApi
             Users = new UsersEndpoint(rateLimitedRequester);
             Categories = new CategoriesEndpoint(rateLimitedRequester);
             Games = new GamesEndpoint(rateLimitedRequester);
+            Runs = new RunsEndpoint(rateLimitedRequester);
         }
     }
 }

@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.Games
 {
     public record GameName
     {
-        [JsonPropertyName("international")]
+        [JsonProperty("international")]
         public string International { get; init; }
 
-        [JsonPropertyName("japanese")]
+        [JsonProperty("japanese")]
         public string Japanese { get; init; }
 
-        [JsonPropertyName("twitch")]
+        [JsonProperty("twitch")]
         public string Twitch { get; init; }
     }
 }

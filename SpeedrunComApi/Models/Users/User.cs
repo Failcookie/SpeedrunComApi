@@ -1,25 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.Users
 {
     public record User
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string ID { get; init; }
 
-        [JsonPropertyName("names")]
+        [JsonProperty("names")]
         public UserName Names { get; init; }
 
-        [JsonPropertyName("weblink")]
+        [JsonProperty("weblink")]
         public string Weblink { get; init; }
 
-        [JsonPropertyName("role")]
+        [JsonProperty("role")]
         public UserRole Role { get; init; }
 
-        [JsonPropertyName("signup")]
+        [JsonProperty("signup")]
         public DateTimeOffset? Signup { get; init; }
     }
 }

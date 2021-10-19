@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.Games
 {
     public record GameBulk
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string ID { get; init; }
 
-        [JsonPropertyName("names")]
+        [JsonProperty("names")]
         public GameBulkName Names { get; init; }
 
-        [JsonPropertyName("abbreviation")]
+        [JsonProperty("abbreviation")]
         public string Abbreviation { get; init; }
 
-        [JsonPropertyName("weblink")]
+        [JsonProperty("weblink")]
         public Uri Weblink { get; init; }
     }
 }

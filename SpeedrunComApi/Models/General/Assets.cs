@@ -1,60 +1,56 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.General
 {
     public record Assets
     {
-        [JsonPropertyName("logo")]
+        [JsonProperty("logo")]
         public AssetDetails Logo { get; init; }
 
-        [JsonPropertyName("cover-tiny")]
+        [JsonProperty("cover-tiny")]
         public AssetDetails CoverTiny { get; init; }
 
-        [JsonPropertyName("cover-small")]
+        [JsonProperty("cover-small")]
         public AssetDetails CoverSmall { get; init; }
 
-        [JsonPropertyName("cover-medium")]
+        [JsonProperty("cover-medium")]
         public AssetDetails CoverMedium { get; init; }
 
-        [JsonPropertyName("cover-large")]
+        [JsonProperty("cover-large")]
         public AssetDetails CoverLarge { get; init; }
 
-        [JsonPropertyName("icon")]
+        [JsonProperty("icon")]
         public AssetDetails Icon { get; init; }
 
-        [JsonPropertyName("trophy-1st")]
+        [JsonProperty("trophy-1st")]
         public AssetDetails TrophyFirstPlace { get; init; }
 
-        [JsonPropertyName("trophy-2nd")]
+        [JsonProperty("trophy-2nd")]
         public AssetDetails TrophySecondPlace { get; init; }
 
-        [JsonPropertyName("trophy-3rd")]
+        [JsonProperty("trophy-3rd")]
         public AssetDetails TrophyThirdPlace { get; init; }
 
-        [JsonPropertyName("trophy-4th")]
+        [JsonProperty("trophy-4th")]
         public AssetDetails TrophyFourthPlace { get; init; }
 
-        [JsonPropertyName("background")]
+        [JsonProperty("background")]
         public AssetDetails Background { get; init; }
 
-        [JsonPropertyName("foreground")]
+        [JsonProperty("foreground")]
         public AssetDetails Foreground { get; init; }
     }
 
     public record AssetDetails
     {
-        [JsonPropertyName("uri")]
+        [JsonProperty("uri")]
         public Uri Uri { get; init; }
 
-        [JsonPropertyName("width")]
+        [JsonProperty("width")]
         public int Width { get; init; }
 
-        [JsonPropertyName("height")]
+        [JsonProperty("height")]
         public int Height { get; init; }
     }
 }

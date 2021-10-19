@@ -1,28 +1,28 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace SpeedrunComApi.Models.Categories
 {
     public record Category
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public string ID { get; init; }
 
-        [JsonPropertyName("name")]
+        [JsonProperty("name")]
         public string Name { get; init; }
 
-        [JsonPropertyName("weblink")]
+        [JsonProperty("weblink")]
         public string Weblink { get; init; }
 
-        [JsonPropertyName("type")]
+        [JsonProperty("type")]
         public string Type { get; init; }
 
-        [JsonPropertyName("rules")]
+        [JsonProperty("rules")]
         public string Rules { get; init; }
 
-        [JsonPropertyName("miscellaneous")]
+        [JsonProperty("miscellaneous")]
         public bool Miscellaneous { get; init; }
 
-        [JsonPropertyName("players")]
+        [JsonProperty("players")]
         public CategoryPlayers Players { get; init; }
     }
 }
