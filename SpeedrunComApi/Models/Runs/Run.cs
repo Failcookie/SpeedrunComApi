@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace SpeedrunComApi.Models.Runs
 {
@@ -35,7 +36,7 @@ namespace SpeedrunComApi.Models.Runs
         public RunStatus RunStatus { get; init; }
 
         [JsonProperty("players")]
-        public List<RunPlayer> Players { get; init; }
+        public ReadOnlyCollection<RunPlayer> Players { get; init; }
 
         /// <summary>
         /// When the run happened
@@ -59,6 +60,6 @@ namespace SpeedrunComApi.Models.Runs
         public ApiLink Splits { get; init; }
 
         [JsonProperty("links")]
-        public List<ApiLink> Links { get; init; }
+        public ReadOnlyCollection<ApiLink> Links { get; init; }
     }
 }

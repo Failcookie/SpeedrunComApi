@@ -2,7 +2,7 @@
 
 namespace SpeedrunComApi.Models.Users
 {
-    public record UserName
+    public record LocalName
     {
         [JsonProperty("international")]
         public string International { get; init; }
