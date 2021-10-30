@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace SpeedrunComApi.Objects
 {
     [DebuggerDisplay("{" + nameof(DebuggerDisplay) + "}")]
-	public class ApiResponse<T>
+	public class PagedApiResponse<T>
 	{
 		[JsonProperty]
 		public int Status { get; private set; }
@@ -21,7 +21,10 @@ namespace SpeedrunComApi.Objects
 		[JsonProperty]
 		public bool HasError => Error != null;
 
-		public bool IsFinalPage { get; set; }
+		[JsonProperty]
+		public ApiPagination Pagination { get; init; }
+
+		public bool IsFinalPage { get => Pagination.Max != Pagination.Size; }
 
 		private object DebuggerDisplay => IsSuccess ? Data : $"Error: {Status} | {Error}";
 	}

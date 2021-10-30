@@ -13,5 +13,7 @@ namespace SpeedrunComApi.Interfaces
         CategoriesEndpoint Categories { get; }
         GamesEndpoint Games { get; }
         RunsEndpoint Runs { get; }
+        GuestsEndpoint Guests { get; }
+        PlatformsEndpoint Platforms { get; }
     }
 }

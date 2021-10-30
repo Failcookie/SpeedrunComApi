@@ -30,28 +30,28 @@ namespace SpeedrunComApi.Models.Games
         public bool Romhack { get; init; }
 
         [JsonProperty("gametypes")]
-        public string[] GametypeIDs { get; init; } // TODO
+        public string[] GametypeIDs { get; init; }
 
         [JsonProperty("platforms")]
-        public string[] PlatformIDs { get; init; }  // TODO
+        public string[] PlatformIDs { get; init; }
 
         [JsonProperty("regions")]
-        public string[] Regions { get; init; }  // TODO
+        public string[] Regions { get; init; }
 
         [JsonProperty("genres")]
-        public string[] GenreIDs { get; init; }  // TODO
+        public string[] GenreIDs { get; init; }
 
         [JsonProperty("engines")]
-        public string[] EngineIDs { get; init; }  // TODO
+        public string[] EngineIDs { get; init; }
 
         [JsonProperty("developers")]
-        public string[] DeveloperIDs { get; init; }  // TODO
+        public string[] DeveloperIDs { get; init; }
 
         [JsonProperty("publishers")]
-        public string[] PublisherIDs { get; init; }  // TODO
+        public string[] PublisherIDs { get; init; }
 
         [JsonProperty("moderators")]
-        public Dictionary<string, string> Moderators { get; init; }  // TODO
+        public Dictionary<string, string> Moderators { get; init; }
 
         [JsonProperty("created")]
         public DateTimeOffset? Created { get; init; }

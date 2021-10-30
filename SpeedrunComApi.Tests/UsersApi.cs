@@ -1,6 +1,7 @@
 using Moq;
 using SpeedrunComApi.Http;
 using SpeedrunComApi.Interfaces;
+using SpeedrunComApi.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -40,6 +41,16 @@ namespace SpeedrunComApi.Tests
             var user = await client.Users.GetPersonalBestsByUserId(userId);
 
             Assert.NotNull(user.Data);
+        }
+
+        [Theory]
+        [InlineData("98rkldx1")]
+        public async Task GetUserByIdAsyn_GetRyanLockwood_VerifyRoleEnum(string userId)
+        {
+            var client = new SpeedrunComApiClient(_realLimitedRequester);
+            var user = await client.Users.GetUserbyId(userId);
+
+            Assert.True(user.Data.Role == UserRole.User);
         }
     }
 }

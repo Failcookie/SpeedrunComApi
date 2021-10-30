@@ -19,47 +19,47 @@ namespace SpeedrunComApi.Endpoints
 		private readonly string baseUrl = "v1/games";
 
 		#region List of Games
-        public async Task<ApiResponse<List<Game>>> GetGamesAsync(int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc)
+        public async Task<PagedApiResponse<List<Game>>> GetGamesAsync(int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc)
 		{
 			var parameters = GetGamesListDefaultParameters(orderBy, sortDir, pageSize , page);
 
 			var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-			return JsonConvert.DeserializeObject<ApiResponse<List<Game>>>(response);
+			return JsonConvert.DeserializeObject<PagedApiResponse<List<Game>>>(response);
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByNameAsync(string name, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.Similarity, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
+		public async Task<PagedApiResponse<List<Game>>> GetGamesByNameAsync(string name, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.Similarity, SortDirection sortDir = SortDirection.Asc)
 		{
 			var parameters = GetGamesListDefaultParameters(orderBy, sortDir, pageSize, page);
 			parameters.Add($"name={name}");
 
 			var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-			return JsonConvert.DeserializeObject<ApiResponse<List<Game>>>(response);
+			return JsonConvert.DeserializeObject<PagedApiResponse<List<Game>>>(response);
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByAbbreviationAsync(string abbreviation, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
+		public async Task<PagedApiResponse<List<Game>>> GetGamesByAbbreviationAsync(string abbreviation, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc)
 		{
 			var parameters = GetGamesListDefaultParameters(orderBy, sortDir, pageSize, page);
 			parameters.Add($"abbreviation={abbreviation}");
 
 			var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-			return JsonConvert.DeserializeObject<ApiResponse<List<Game>>>(response);
+			return JsonConvert.DeserializeObject<PagedApiResponse<List<Game>>>(response);
 		}
 
-		public async Task<ApiResponse<List<Game>>> GetGamesByYearReleasedAsync(int year, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
+		public async Task<PagedApiResponse<List<Game>>> GetGamesByYearReleasedAsync(int year, int pageSize = 20, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc)
 		{
 			var parameters = GetGamesListDefaultParameters(orderBy, sortDir, pageSize, page);
 			parameters.Add($"released={year}");
 
 			var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-			return JsonConvert.DeserializeObject<ApiResponse<List<Game>>>(response);
+			return JsonConvert.DeserializeObject<PagedApiResponse<List<Game>>>(response);
 		}
 
 		/// <param name="pageSize">Max amount of 1000</param>
-		public async Task<ApiResponse<List<GameBulk>>> GetGamesBulkAsync(int pageSize = 100, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc, CancellationToken token = default)
+		public async Task<ApiResponse<List<GameBulk>>> GetGamesBulkAsync(int pageSize = 100, int page = 1, GameOrderBy orderBy = GameOrderBy.InternationalName, SortDirection sortDir = SortDirection.Asc)
 		{
 			if(pageSize > 1000)
             {
@@ -98,7 +98,7 @@ namespace SpeedrunComApi.Endpoints
 		}
 
 		/// <param name="miscellaneous">If true, filter our misc categories.</param>
-		public async Task<ApiResponse<List<Category>>> GetGameGategoriesAsync(string id, bool miscellaneous = false, CancellationToken token = default)
+		public async Task<ApiResponse<List<Category>>> GetGameGategoriesAsync(string id, bool miscellaneous = false)
 		{
 			string parsedMisc = miscellaneous ? "yes" : "no";
 			List<string> parameters = new List<string> { $"miscellaneous={parsedMisc}" };

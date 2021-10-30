@@ -18,63 +18,63 @@ namespace SpeedrunComApi.Endpoints
 
         private readonly string baseUrl = "v1/runs";
 
-        public async Task<ApiResponse<List<Run>>> GetRunsAsync(int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsAsync(int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
-        public async Task<ApiResponse<List<Run>>> GetRunsByGameAsync(string gameId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsByGameAsync(string gameId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
             parameters.Add($"game={gameId}");
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
-        public async Task<ApiResponse<List<Run>>> GetRunsByUserAsync(string userId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsByUserAsync(string userId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
             parameters.Add($"user={userId}");
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
-        public async Task<ApiResponse<List<Run>>> GetRunsByExaminerAsync(string examinerId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsByExaminerAsync(string examinerId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
             parameters.Add($"examiner={examinerId}");
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
-        public async Task<ApiResponse<List<Run>>> GetRunsByLevelAsync(string levelId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsByLevelAsync(string levelId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
             parameters.Add($"level={levelId}");
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
-        public async Task<ApiResponse<List<Run>>> GetRunsByCategoryIdAsync(string categoryId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
+        public async Task<PagedApiResponse<List<Run>>> GetRunsByCategoryIdAsync(string categoryId, int pageSize = 20, int page = 1, RunOrderBy orderBy = RunOrderBy.Game, SortDirection sortDir = SortDirection.Asc, RunStatusFilter status = RunStatusFilter.All)
         {
             var parameters = GetListDefaultParameters(status, orderBy, sortDir, pageSize, page);
             parameters.Add($"category={categoryId}");
 
             var response = await _requester.CreateGetRequestAsync(baseUrl, parameters).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<ApiResponse<List<Run>>>(response);
+            return JsonConvert.DeserializeObject<PagedApiResponse<List<Run>>>(response);
         }
 
         private List<string> GetListDefaultParameters(RunStatusFilter status, RunOrderBy orderBy, SortDirection sortDir, int max, int page)
