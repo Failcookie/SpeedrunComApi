@@ -11,6 +11,9 @@ namespace SpeedrunComApi.Models.Runs
         [JsonProperty("id")]
         public string Id { get; init; }
 
+        [JsonProperty("name")]
+        public string Name { get; init; }
+
         [JsonProperty("uri")]
         public Uri Uri { get; init; }
 

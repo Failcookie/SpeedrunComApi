@@ -14,7 +14,7 @@ namespace SpeedrunComApi.Models.Categories
         public string Weblink { get; init; }
 
         [JsonProperty("type")]
-        public string Type { get; init; }
+        public CategoryType Type { get; init; }
 
         [JsonProperty("rules")]
         public string Rules { get; init; }
