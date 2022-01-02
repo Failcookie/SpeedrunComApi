@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Authors>Failcookie</Authors>
-    <Copyright>Copyright © 2021 Failcookie</Copyright>
+    <Authors>Caleb Smith</Authors>
+    <Copyright>Copyright © 2021 Caleb Smith</Copyright>
     <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
     <DefaultArtifactsFileMatch>*.nupkg *.snupkg</DefaultArtifactsFileMatch>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageProjectUrl>https://github.com/Failcookie/SpeedrunComApi</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Failcookie/SpeedrunComApi</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
